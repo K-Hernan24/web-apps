@@ -1,0 +1,13 @@
+<h1>Companies</h1>
+
+
+<!-- Here is how you create commments in HTML -->
+<ul>
+<% companies = Company.all %>
+  <%for company in companies%>
+    <li><%=company["name"]%></li>
+  <%end %>
+</ul>
+
+
+
