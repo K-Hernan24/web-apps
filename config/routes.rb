@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get("/dice", :controller => "dice", :action => "index")
   get("/companies", :controller => "companies", :action => "index")
   get("/contacts", :controller => "contacts", :action => "index")
+  get("/casino", :controller => "casino", :action => "index")
 end

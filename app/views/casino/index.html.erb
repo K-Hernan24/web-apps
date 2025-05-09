@@ -1,0 +1,46 @@
+<h1>Welcome to ENTR-451 Casino</h1>
+
+<!--This is the code in which we are going to initialize a deck  -->
+<% 
+deck = []
+ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack","queen", "king", "ace"]
+suits = ["clubs", "diamonds", "hearts", "spades"]
+
+for suit in suits
+  for rank in ranks
+    card = "#{rank}_of_#{suit}"
+    deck.push(card)
+   end
+end
+%>
+
+<!--This is the code that we will use to mix the deck and set our hand to be empty -->
+<% 
+deck = deck.shuffle
+hand = []
+number_cards_to_shuffle = 5
+%>
+
+<%
+index = 0
+loop do   
+  if index == number_cards_to_shuffle
+    break
+  end
+  card_shuffle = deck[index]
+  hand.push(card_shuffle)
+  index += 1
+end
+
+%>
+
+
+<!-- This is the part of the code in which we print all the cards that have been shuffled-->
+<p>
+  <% for card in hand %>
+      <img src="/images/cards/<%= card %>.svg" alt="Image of the card">
+  <%  end%>
+</p>
+
+<!-- This is the code that will be followed to make the user click on button rather than refresh page -->
+<a href="/casino">Get a new hand</a>
